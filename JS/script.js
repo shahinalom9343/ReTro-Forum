@@ -108,23 +108,26 @@ const fetchLatestPosts = async()=>{
 
 }
 
-const handleSearch=(cat) =>{
-  const value = document.getElementById("search-box").value;
-  if(value){
-    loadPostByCategory(value);
+const handleSearch=() =>{
+  const cat = document.getElementById("search-box");
+  const catValue = cat.value;
+  if(catValue){
+    loadPostByCategory(catValue);
   }
   else{
     alert("Please Enter a Valid Category");
   }
+  // cat.innerText = '';
 }
 
 const loadPostByCategory =async(category) =>{
-  const url = `https://openapi.programming-hero.com/api/retro-forum/posts?${category}`;
+  const url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`;
   const response = await fetch(url); 
   // console.log(response);
   const data = await response.json();
   console.log(data);
   const allPosts = data.posts;
+  allPostContainer.innerHTML = '';
   allPosts.forEach((item)=>{
     // console.log(item);
     const div = document.createElement("div");
