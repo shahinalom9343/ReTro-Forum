@@ -19,7 +19,7 @@
 <body class="font-mulish">
 
 
-  <header class=" px-7 lg:px-24">
+  <header class=" px-7 lg:px-32">
     <!--navbar section starts-->
     <nav>
       <div class="navbar bg-base-100">
@@ -39,8 +39,8 @@
     </nav>
     <!--navbar section ends-->
     <!--banner section starts-->
-    <section class=" my-3 lg:my-10 bg-[#0C0D2D]">
-      <div class="hero min-h-screen rounded-3xl bg-[url(images/bgbanner.png)] bg-cover bg-center bg-no-repeat">
+    <section class=" my-3 lg:my-10 bg-[#0C0D2D] rounded-3xl">
+      <div class="hero min-h-screen bg-[url(images/bgbanner.png)] bg-cover bg-center bg-no-repeat">
         <div class="hero-content flex-col lg:flex-row-reverse p-24">
           <div class="bg-white rounded-[32px] p-12 text-2xl font-medium w-full lg:w-5/12">
             <div class="flex justify-between space-x-12">
@@ -78,7 +78,7 @@
 
 
 
-  <main class=" px-7 lg:px-24">
+  <main class=" px-7 lg:px-32">
     <!--discussion section starts-->
     <section class="mb-7 lg:mb-24 mt-4 lg:mt-12">
       <h1 class="font-black text-[40px] text-center">Let’s Discuss</h1>
@@ -90,15 +90,12 @@
           <!--single card-->
         </div>
         <!--right div-->
-        <div id="" class="bg-[#12132D0D] p-6 w-full lg:w-1/3  rounded-xl space-y-2">
-          <div class="flex justify-between">
-            <p class="font-bold text-xl">Title</p>
-            <p>Mark as Read (<span id="count-posts">0</span>)</p>
+        <div id="" class=" p-6 w-full lg:w-1/3 rounded-xl h-1 space-y-2">
+          <div class="flex justify-between p-4 bg-[#12132D0D]">
+            <p class="font-extrabold text-2xl">Title</p>
+            <p class="font-extrabold text-2xl">Mark as Read (<span id="count-posts">0</span>)</p>
           </div>
-          <div id="show-post-values" class="flex flex-col justify-between bg-white rounded-lg p-4">
-            <div id="post-container" >
-
-            </div>
+          <div id="show-post-values" class=" bg-white rounded-lg">
           </div>
         </div>
 

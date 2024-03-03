@@ -1,5 +1,6 @@
 const allPostContainer = document.getElementById("all-post-container");
 const latestPostContainer = document.getElementById("latest-card-container");
+const postContainer = document.getElementById("post-container");
 let countPost = 0;
 
 const fetchAllPosts =async() =>{
@@ -11,12 +12,12 @@ const fetchAllPosts =async() =>{
   allPosts.forEach((item)=>{
     // console.log(item);
     const div = document.createElement("div");
-    div.classList.add("flex");
+    div.classList=`flex bg-[#12132D0D] rounded-2xl px-2 py-4 shadow-lg`
     div.innerHTML = `
     <!--card left-->
-    <div class="w-1/6 h-24 mt-4 ml-2 bg-white rounded-2xl relative">
-      <img src="${item.image}">
-      <div class="absolute bg-red-600 rounded h-3 w-3 top-0 right-0"></div>
+    <div class="w-1/6 mt-4 ml-2 bg-white  relative">
+      <img class="rounded-3xl" src="${item.image}">
+      <div id="indicator" class="absolute bg-red-600 rounded h-3 w-3 top-0 right-0"></div>
     </div>
     <!--card right-->
     <div class="card-body text-start w-5/6">
@@ -41,7 +42,7 @@ const fetchAllPosts =async() =>{
           </div>
           <div class="flex items-center gap-2">
             <i class="fa-regular fa-clock"></i>
-            <p>${item.posted_time}</p>
+            <p>${item.posted_time} min</p>
           </div>
         </div>
         <button onclick="showPostValue()" class="bg-[#10B981] btn btn-circle">
@@ -57,11 +58,11 @@ const fetchAllPosts =async() =>{
 // show post values
 const showPostValue = () =>{
   const showPostValues = document.getElementById("show-post-values");
-  console.log('clicked');
+  // console.log('clicked');
   let div = document.createElement("div");
-  div.classList.add("space-x-2");
+  div.classList = `flex justify-between font-extrabold my-2 bg-[#12132D0D] rounded-lg px-2 py-4 shadow-lg`;
   div.innerHTML = `
-  <p class="font-semibold">10 Kids Unaware of Their Halloween Costume</p>
+  <div>10 Kids Unaware of Their Halloween Costume</div>
   <div class="flex items-center gap-2">
     <i class="fa-regular fa-eye"></i>
     <p>560</p>
@@ -82,7 +83,7 @@ const fetchLatestPosts = async()=>{
   let latestAllPosts = data;
   latestAllPosts.forEach((item)=>{
     const div = document.createElement("div");
-    // div.classList = "";
+    div.classList = `space-x-4 space-y-4`;
     div.innerHTML = `
     
     <figure class="px-10 pt-10">
@@ -131,7 +132,7 @@ const loadPostByCategory =async(category) =>{
   allPosts.forEach((item)=>{
     // console.log(item);
     const div = document.createElement("div");
-    div.classList.add("flex");
+    div.classList=`flex bg-[#12132D0D] rounded-2xl px-2 py-4 shadow-lg`
     div.innerHTML = `
     <!--card left-->
     <div class="w-1/6 h-24 mt-4 ml-2 bg-white rounded-2xl relative">
@@ -161,7 +162,7 @@ const loadPostByCategory =async(category) =>{
           </div>
           <div class="flex items-center gap-2">
             <i class="fa-regular fa-clock"></i>
-            <p>${item.posted_time}</p>
+            <p>${item.posted_time} min</p>
           </div>
         </div>
         <button class="bg-[#10B981] btn btn-circle">
