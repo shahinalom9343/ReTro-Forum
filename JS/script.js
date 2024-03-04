@@ -4,6 +4,7 @@ const postContainer = document.getElementById("post-container");
 let countPost = 0;
 
 const fetchAllPosts =async() =>{
+  document.getElementById("loading-spinner").style.display = "block";
   const url = "https://openapi.programming-hero.com/api/retro-forum/posts";
   const response = await fetch(url); 
   const data = await response.json();
@@ -11,6 +12,7 @@ const fetchAllPosts =async() =>{
   const allPosts = data.posts;
   allPosts.forEach((item)=>{
     // console.log(item);
+    document.getElementById("loading-spinner").style.display = "none";
     const div = document.createElement("div");
     div.classList=`flex bg-[#12132D0D] rounded-2xl px-2 py-4 shadow-lg`
     div.innerHTML = `
@@ -76,12 +78,14 @@ const showPostValue = () =>{
 
 // latest post section
 const fetchLatestPosts = async()=>{
+  document.getElementById("loading-spinner").style.display = "block";
   const url = "https://openapi.programming-hero.com/api/retro-forum/latest-posts";
   const response = await fetch(url); 
   const data = await response.json();
   // console.log(data);
   let latestAllPosts = data;
   latestAllPosts.forEach((item)=>{
+    document.getElementById("loading-spinner").style.display = "none";
     const div = document.createElement("div");
     div.classList = `space-x-4 space-y-4`;
     div.innerHTML = `
@@ -122,6 +126,7 @@ const handleSearch=() =>{
 }
 
 const loadPostByCategory =async(category) =>{
+  document.getElementById("loading-spinner").style.display = "block";
   const url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`;
   const response = await fetch(url); 
   // console.log(response);
@@ -131,6 +136,7 @@ const loadPostByCategory =async(category) =>{
   allPostContainer.innerHTML = '';
   allPosts.forEach((item)=>{
     // console.log(item);
+    document.getElementById("loading-spinner").style.display = "none";
     const div = document.createElement("div");
     div.classList=`flex bg-[#12132D0D] rounded-2xl px-2 py-4 shadow-lg`
     div.innerHTML = `

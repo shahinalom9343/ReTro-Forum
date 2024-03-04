@@ -6,3 +6,6 @@
 .font-mulish{
   font-family: "Mulish", sans-serif;
 }
+.loading-spinner-class{
+  display: block;
+}
