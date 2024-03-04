@@ -1,6 +1,7 @@
 const allPostContainer = document.getElementById("all-post-container");
 const latestPostContainer = document.getElementById("latest-card-container");
 const postContainer = document.getElementById("post-container");
+const showPostValues = document.getElementById("show-post-values");
 let countPost = 0;
 
 const fetchAllPosts =async() =>{
@@ -17,7 +18,7 @@ const fetchAllPosts =async() =>{
     div.classList=`flex bg-[#797DFC1A] rounded-2xl px-2 py-4 shadow-lg`
     div.innerHTML = `
     <!--card left-->
-    <div class="w-1/6 mt-4 ml-2 bg-white  relative">
+    <div class="w-1/6 mt-4 ml-2 relative">
       <img class="rounded-3xl" src="${item.image}">
       <div id="indicator" class="absolute bg-red-600 rounded h-3 w-3 top-0 right-0"></div>
     </div>
@@ -59,7 +60,6 @@ const fetchAllPosts =async() =>{
 
 // show post values
 const showPostValue = () =>{
-  const showPostValues = document.getElementById("show-post-values");
   // console.log('clicked');
   let div = document.createElement("div");
   div.classList = `flex justify-between font-extrabold my-2 bg-[#12132D0D] rounded-lg px-2 py-4 shadow-lg`;
@@ -138,10 +138,10 @@ const loadPostByCategory =async(category) =>{
     // console.log(item);
     document.getElementById("loading-spinner").style.display = "none";
     const div = document.createElement("div");
-    div.classList=`flex bg-[#12132D0D] rounded-2xl px-2 py-4 shadow-lg`
+    div.classList=`flex bg-[#797DFC1A] rounded-2xl px-2 py-4 shadow-lg`
     div.innerHTML = `
     <!--card left-->
-    <div class="w-1/6 h-24 mt-4 ml-2 bg-white rounded-2xl relative">
+    <div class="w-1/6 mt-4 ml-2 relative">
       <img src="${item.image}">
       <div class="absolute bg-red-600 rounded h-3 w-3 top-0 right-0"></div>
     </div>
@@ -171,7 +171,7 @@ const loadPostByCategory =async(category) =>{
             <p>${item.posted_time} min</p>
           </div>
         </div>
-        <button class="bg-[#10B981] btn btn-circle">
+        <button onclick="showPostValue()" class="bg-[#10B981] btn btn-circle">
           <i class="fa-regular fa-envelope-open text-white text-2xl"></i>
          </button>
       </div>
@@ -183,4 +183,3 @@ const loadPostByCategory =async(category) =>{
 }
 fetchAllPosts();
 fetchLatestPosts();
-
