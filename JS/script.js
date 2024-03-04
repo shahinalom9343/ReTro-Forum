@@ -14,7 +14,7 @@ const fetchAllPosts =async() =>{
     // console.log(item);
     document.getElementById("loading-spinner").style.display = "none";
     const div = document.createElement("div");
-    div.classList=`flex bg-[#12132D0D] rounded-2xl px-2 py-4 shadow-lg`
+    div.classList=`flex bg-[#797DFC1A] rounded-2xl px-2 py-4 shadow-lg`
     div.innerHTML = `
     <!--card left-->
     <div class="w-1/6 mt-4 ml-2 bg-white  relative">
